@@ -34,7 +34,7 @@ export function Gallery() {
               key={item.src}
               type="button"
               onClick={() => setActive(i)}
-              className="mb-2 block w-full break-inside-avoid overflow-hidden border border-[var(--line)] sm:mb-3"
+              className="mb-2 block w-full break-inside-avoid overflow-hidden border-2 border-[rgba(196,165,116,0.35)] sm:mb-3"
             >
               <Image
                 src={item.src}

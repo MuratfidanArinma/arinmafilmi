@@ -27,7 +27,7 @@ export function Director() {
             {DIRECTOR_PHOTOS.map((photo, i) => (
               <div
                 key={photo.src}
-                className={`relative overflow-hidden border border-[var(--line)] ${i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-[4/5]"}`}
+                className={`relative overflow-hidden border-2 border-[rgba(196,165,116,0.4)] ${i === 0 ? "col-span-2 aspect-[16/10]" : "aspect-[4/5]"}`}
               >
                 <Image
                   src={photo.src}
