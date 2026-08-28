@@ -48,10 +48,9 @@ export const DIRECTOR_PHOTOS = [
   { src: "/director/01.jpg", alt: "Beytullah Pekok, set üzerinde kamera ile" },
   { src: "/director/03.jpg", alt: "Beytullah Pekok, dış çekimde" },
   { src: "/director/04.jpg", alt: "Beytullah Pekok, kamera arkasında" },
-  { src: "/director/05.jpg", alt: "Beytullah Pekok, yönetmen portresi" },
 ] as const;
 
-export const GALLERY = Array.from({ length: 27 }, (_, i) => {
+export const GALLERY = Array.from({ length: 26 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return {
     src: `/gallery/${n}.jpg`,

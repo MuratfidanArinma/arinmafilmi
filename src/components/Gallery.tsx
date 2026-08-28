@@ -28,7 +28,7 @@ export function Gallery() {
         </h2>
         <div className="section-line mx-auto mt-6 max-w-xs" />
 
-        <div className="mt-10 columns-2 gap-2 sm:mt-14 sm:columns-2 sm:gap-3 lg:columns-3">
+        <div className="mt-10 columns-2 gap-2 sm:mt-14 sm:gap-3">
           {GALLERY.map((item, i) => (
             <button
               key={item.src}
