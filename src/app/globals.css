@@ -58,7 +58,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 }
 
 .font-serif {
@@ -70,8 +70,8 @@ body {
   position: fixed;
   inset: 0;
   z-index: 20;
-  opacity: 0.09;
-  mix-blend-mode: overlay;
+  opacity: 0.05;
+  mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
   animation: grain-shift 0.45s steps(3) infinite;
 }
@@ -85,37 +85,25 @@ body {
 
 .poster-frame {
   position: relative;
-  background: #070606;
-  padding: 8px;
-  border: 2px solid rgba(196, 165, 116, 0.9);
-  box-shadow:
-    0 0 0 10px #050506,
-    0 0 0 11px rgba(196, 165, 116, 0.42),
-    0 24px 64px rgba(0, 0, 0, 0.8),
-    0 0 48px rgba(196, 52, 36, 0.12);
+  overflow: hidden;
+  background: #000;
+  padding: 0;
+  border: 1px solid rgba(196, 165, 116, 0.88);
+  outline: 1px solid rgba(196, 165, 116, 0.5);
+  outline-offset: 5px;
 }
 
 .poster-frame::after {
   content: "";
   pointer-events: none;
   position: absolute;
-  inset: 8px;
-  box-shadow: inset 0 0 0 1px rgba(196, 165, 116, 0.28);
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(196, 165, 116, 0.35);
 }
 
 @media (min-width: 768px) {
   .poster-frame {
-    padding: 12px;
-    border-width: 3px;
-    box-shadow:
-      0 0 0 14px #050506,
-      0 0 0 16px rgba(196, 165, 116, 0.4),
-      0 32px 80px rgba(0, 0, 0, 0.82),
-      0 0 56px rgba(196, 52, 36, 0.14);
-  }
-
-  .poster-frame::after {
-    inset: 12px;
+    outline-offset: 7px;
   }
 }
 

@@ -20,7 +20,7 @@ export function Hero() {
         </div>
       </div>
 
-      <h1 className="date-title px-4 pb-5 text-center leading-none md:pb-7">
+      <h1 className="date-title mt-6 px-4 pb-6 text-center leading-none md:mt-8 md:pb-8">
         <span className="block whitespace-nowrap text-[1.7rem] tracking-[0.04em] md:text-6xl lg:text-7xl">
           11 Eylül&apos;de
         </span>
