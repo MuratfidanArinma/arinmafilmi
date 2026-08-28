@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+:root {
+  --void: #050506;
+  --ash: #0e0d0f;
+  --smoke: #1a1718;
+  --bone: #e6d8c6;
+  --bone-dim: #b7a890;
+  --blood: #8f1616;
+  --ember: #c43424;
+  --gold: #c4a574;
+  --line: rgba(196, 165, 116, 0.28);
+}
+
+@theme inline {
+  --color-void: var(--void);
+  --color-ash: var(--ash);
+  --color-smoke: var(--smoke);
+  --color-bone: var(--bone);
+  --color-bone-dim: var(--bone-dim);
+  --color-blood: var(--blood);
+  --color-ember: var(--ember);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-cinzel);
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.75rem;
+  background: var(--void);
+}
+
+body {
+  background: var(--void);
+  color: var(--bone);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--blood);
+  color: var(--bone);
+}
+
+.font-display {
+  font-family: var(--font-display), "Times New Roman", serif;
+}
+
+.date-title {
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  background: linear-gradient(180deg, #f6ecda 0%, #e6d8c6 38%, #c4a574 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.75));
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+  animation: grain-shift 0.45s steps(3) infinite;
+}
+
+.vignette {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.72) 100%);
+}
+
+.section-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.45;
+}
+
+.ember-glow {
+  box-shadow:
+    0 0 40px rgba(196, 52, 36, 0.18),
+    inset 0 0 40px rgba(196, 52, 36, 0.08);
+}
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1%, 1%); }
+  50% { transform: translate(1%, -1%); }
+  75% { transform: translate(-1%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes ember-pulse {
+  0%, 100% { opacity: 0.35; filter: drop-shadow(0 0 6px rgba(196, 52, 36, 0.4)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 16px rgba(196, 52, 36, 0.9)); }
+}
+
+@keyframes smoke-drift {
+  0% { transform: translateY(8%) scale(1); opacity: 0.15; }
+  50% { transform: translateY(-4%) scale(1.08); opacity: 0.28; }
+  100% { transform: translateY(8%) scale(1); opacity: 0.15; }
+}
+
+@keyframes sprocket-run {
+  from { transform: translateY(0); }
+  to { transform: translateY(-28px); }
+}
+
+@keyframes frame-breathe {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(196, 165, 116, 0.35), 0 0 40px rgba(143, 22, 22, 0.18); }
+  50% { box-shadow: 0 0 0 1px rgba(196, 52, 36, 0.55), 0 0 70px rgba(143, 22, 22, 0.38); }
+}
+
+@keyframes rune-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.film-stage {
+  position: relative;
+  padding: 10px 22px;
+  background:
+    linear-gradient(180deg, #1a1210 0%, #0a0808 40%, #120c0b 100%);
+  border: 1px solid var(--line);
+  animation: frame-breathe 4.5s ease-in-out infinite;
+}
+
+.film-stage::before,
+.film-stage::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ember), var(--gold), var(--ember), transparent);
+  opacity: 0.7;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.film-stage::before { top: 5px; }
+.film-stage::after { bottom: 5px; }
+
+.sprockets {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  width: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sprockets-left { left: 4px; }
+.sprockets-right { right: 4px; }
+
+.sprocket-track {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: sprocket-run 0.9s linear infinite;
+}
+
+.sprocket-hole {
+  width: 9px;
+  height: 12px;
+  border-radius: 1px;
+  border: 1.5px solid rgba(230, 216, 198, 0.35);
+  background: #050506;
+  box-shadow: inset 0 0 4px #000;
+}
+
+.film-window {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(196, 165, 116, 0.22);
+}
+
+.rune-corner {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  z-index: 4;
+  pointer-events: none;
+  animation: ember-pulse 3.2s ease-in-out infinite;
+}
+
+.rune-corner svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rune-tl { top: 8px; left: 8px; }
+.rune-tr { top: 8px; right: 8px; transform: scaleX(-1); }
+.rune-bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+.rune-br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+.smoke-veil {
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(143, 22, 22, 0.18), transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(196, 165, 116, 0.08), transparent 45%);
+  animation: smoke-drift 9s ease-in-out infinite;
+}
+
+.credit-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 22s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .film-stage {
+    padding: 14px 32px;
+  }
+
+  .film-stage::before,
+  .film-stage::after {
+    left: 32px;
+    right: 32px;
+  }
+
+  .sprockets {
+    width: 16px;
+    top: 12px;
+    bottom: 12px;
+  }
+
+  .sprockets-left { left: 8px; }
+  .sprockets-right { right: 8px; }
+
+  .sprocket-hole {
+    width: 11px;
+    height: 16px;
+  }
+
+  .rune-corner {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.nav-link {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: var(--bone-dim);
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--bone);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .sprocket-track,
+  .film-stage,
+  .rune-corner,
+  .smoke-veil,
+  .credit-ticker {
+    animation: none;
+  }
+}
