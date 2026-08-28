@@ -5,19 +5,19 @@ export function Hero() {
   const ticker = [...CAST, ...CAST, ...CAST, ...CAST];
 
   return (
-    <section id="giris" className="relative h-[100dvh] max-h-[820px] min-h-[520px] overflow-hidden md:max-h-none">
+    <section id="giris" className="relative h-[72svh] min-h-[500px] overflow-hidden md:h-[100dvh] md:min-h-[640px]">
       <Image
         src="/poster.jpg"
         alt="Arınma afişi — ters yüz, kırmızı runeler ve dişlerden oluşan başlık"
         fill
         priority
-        className="object-cover object-[center_12%] md:object-[center_18%]"
+        className="object-cover object-[center_8%] md:object-[center_16%]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black" />
       <div className="vignette" />
 
-      <div className="absolute inset-x-0 bottom-12 z-10 flex flex-col items-center px-3 text-center md:bottom-20">
+      <div className="absolute inset-x-0 bottom-11 z-10 flex flex-col items-center px-3 text-center md:bottom-20">
         <h1 className="date-title leading-none">
           <span className="block whitespace-nowrap text-[1.7rem] tracking-[0.04em] md:text-6xl lg:text-7xl">
             11 Eylül&apos;de

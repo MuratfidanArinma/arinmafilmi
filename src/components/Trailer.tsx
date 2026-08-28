@@ -43,17 +43,14 @@ export function Trailer() {
   }
 
   return (
-    <section id="fragman" className="relative bg-void px-3 py-12 md:px-8 md:py-32">
+    <section id="fragman" className="relative bg-void px-3 pt-6 pb-12 md:px-8 md:py-32">
       <div className="mx-auto max-w-5xl">
-        <p className="text-center text-[11px] tracking-[0.42em] text-bone-dim uppercase">
-          Giriş alt
-        </p>
-        <h2 className="font-display mt-2 text-center text-2xl tracking-[0.22em] text-bone uppercase md:mt-3 md:text-5xl md:tracking-[0.28em]">
+        <h2 className="font-display text-center text-2xl tracking-[0.22em] text-bone uppercase md:text-5xl md:tracking-[0.28em]">
           Fragman
         </h2>
         <div className="section-line mx-auto mt-6 max-w-xs" />
 
-        <div className="film-stage ember-glow relative mt-8 md:mt-12">
+        <div className="film-stage ember-glow relative mt-7 md:mt-12">
           <span className="rune-corner rune-tl">
             <RuneMark />
           </span>
