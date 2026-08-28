@@ -51,8 +51,9 @@ body {
 .date-title {
   font-family: var(--font-display), "Times New Roman", serif;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: none;
+  font-variant-numeric: lining-nums;
   background: linear-gradient(180deg, #f6ecda 0%, #e6d8c6 38%, #c4a574 100%);
   -webkit-background-clip: text;
   background-clip: text;

@@ -18,11 +18,11 @@ export function Hero() {
       <div className="vignette" />
 
       <div className="absolute inset-x-0 bottom-12 z-10 flex flex-col items-center px-3 text-center md:bottom-20">
-        <h1 className="date-title leading-[0.92]">
-          <span className="block text-[2.15rem] md:text-7xl lg:text-8xl">
+        <h1 className="date-title leading-none">
+          <span className="block whitespace-nowrap text-[1.7rem] tracking-[0.04em] md:text-6xl lg:text-7xl">
             11 Eylül&apos;de
           </span>
-          <span className="mt-1 block text-[1.85rem] tracking-[0.18em] uppercase md:mt-3 md:text-6xl lg:text-7xl">
+          <span className="mt-2 block whitespace-nowrap text-[1.55rem] tracking-[0.14em] uppercase md:mt-3 md:text-5xl lg:text-6xl">
             sinemalarda
           </span>
         </h1>
