@@ -21,8 +21,16 @@ export function Footer() {
         <p className="text-[11px] tracking-[0.22em] text-bone-dim uppercase">
           Dağıtım · {SITE.distribution}
         </p>
-        <p className="text-[10px] tracking-[0.18em] text-bone-dim/70">
-          Yönetmen Beytullah Pekok · Senaryo Bektaş Topaloğlu · {SITE.release}
+        <p className="flex flex-col items-center gap-1.5 text-[10px] tracking-[0.18em] text-bone-dim/70 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2 sm:gap-y-1">
+          <span>Yönetmen Beytullah Pekok</span>
+          <span className="hidden sm:inline" aria-hidden>
+            ·
+          </span>
+          <span>Senaryo Bektaş Topaloğlu</span>
+          <span className="hidden sm:inline" aria-hidden>
+            ·
+          </span>
+          <span className="whitespace-nowrap">{SITE.release}</span>
         </p>
       </div>
     </footer>
