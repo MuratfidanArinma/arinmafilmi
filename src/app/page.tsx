@@ -1,7 +1,21 @@
+import { About } from "@/components/About";
+import { Cast } from "@/components/Cast";
+import { Crew } from "@/components/Crew";
+import { Director } from "@/components/Director";
+import { Gallery } from "@/components/Gallery";
+import { Hero } from "@/components/Hero";
+import { Trailer } from "@/components/Trailer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-svh items-center justify-center px-6">
-      <p className="text-center text-sm tracking-[0.28em] uppercase">Yayından alındı</p>
-    </main>
+    <>
+      <Hero />
+      <Trailer />
+      <About />
+      <Director />
+      <Crew />
+      <Cast />
+      <Gallery />
+    </>
   );
 }
