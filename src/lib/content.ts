@@ -25,7 +25,6 @@ export const CREW = [
   { role: "Yapım", name: "Zey Medya Film" },
   { role: "Yapım Ortaklığı", name: "BGM Production" },
   { role: "Dağıtım", name: "MC Film" },
-  { role: "Yapım Koordinatörü", name: "Asım Kaçmaz" },
 ] as const;
 
 export const CAST = [
@@ -50,10 +49,28 @@ export const DIRECTOR_PHOTOS = [
   { src: "/director/04.jpg", alt: "Beytullah Pekok, kamera arkasında" },
 ] as const;
 
-export const GALLERY = Array.from({ length: 26 }, (_, i) => {
-  const n = String(i + 1).padStart(2, "0");
-  return {
-    src: `/gallery/${n}.jpg`,
-    alt: `Arınma set görüntüsü ${i + 1}`,
-  };
-});
+export const GALLERY = [
+  "04",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "26",
+].map((n, i) => ({
+  src: `/gallery/${n}.jpg`,
+  alt: `Arınma set görüntüsü ${i + 1}`,
+}));
