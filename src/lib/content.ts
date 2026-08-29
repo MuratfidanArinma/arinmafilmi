@@ -50,7 +50,6 @@ export const DIRECTOR_PHOTOS = [
 ] as const;
 
 export const GALLERY = [
-  "04",
   "06",
   "07",
   "08",
@@ -58,9 +57,7 @@ export const GALLERY = [
   "10",
   "11",
   "12",
-  "13",
   "14",
-  "15",
   "17",
   "18",
   "19",
@@ -69,7 +66,6 @@ export const GALLERY = [
   "22",
   "23",
   "24",
-  "26",
 ].map((n, i) => ({
   src: `/gallery/${n}.jpg`,
   alt: `Arınma set görüntüsü ${i + 1}`,
